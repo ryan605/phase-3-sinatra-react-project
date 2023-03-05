@@ -12,6 +12,16 @@ puts "🌱 Seeding spices..."
         last_name: Faker::Name.last_name
     )
 end
+User.all.each do |user|
+    5.times do
+      user.projects.create(
+        title: Faker::Book.title,
+        description: Faker::Lorem.paragraph_by_chars(number: 256),
+        image_url: Faker::Internet.url,
+        repo_url: Faker::Internet.url
+      )
+    end
+end
 
 
 puts "✅ Done seeding!"
