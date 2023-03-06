@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/users' do
-    user = User.all
+    user = User.last(20)
     user.to_json
   end
 
