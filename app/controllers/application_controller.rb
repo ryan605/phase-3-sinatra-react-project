@@ -2,25 +2,19 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
-  get "/" do
-    { message: "DA BEGINNING!" }.to_json
-  end
 
-  get "/hello" do
-    "hello world!"
-  end
 
   get '/users' do
     user = User.last(20)
     user.to_json
   end
 
-  get '/projects' do
+  get 'users/projects' do
     projects = Project.last(10)
     projects.to_json
   end
 
-  post '/projects'do
+  post 'users/projects'do
     project = Project.create(
       title: params[:title],
       description: params[:description],
@@ -44,7 +38,7 @@ class ApplicationController < Sinatra::Base
       {error: error}
     end
   end
-  delete '/projects/:id' do
+  delete 'users/projects/:id' do
     project = Project.find(params[:id])
     project.destroy
     project.to_json
