@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby '2.7.4'
+
 # A DSL for quickly creating web applications
 # https://github.com/sinatra/sinatra
 gem "sinatra", "~> 2.1"
@@ -31,7 +33,7 @@ gem "rake", "~> 13.0"
 # Provides functionality to interact with a SQLite3 database
 gem "sqlite3"
 
-gem 'faker', '~> 1.8', '>= 1.8.7'
+gem 'faker'
 
 # Require all files in a folder
 gem "require_all", "~> 3.0"
