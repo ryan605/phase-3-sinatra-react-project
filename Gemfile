@@ -31,7 +31,7 @@ gem "rake", "~> 13.0"
 # Provides functionality to interact with a SQLite3 database
 gem "sqlite3", "~> 1.4"
 
-gem 'faker', '~> 2.8', '>= 2.8.1'
+gem 'faker', '~> 1.8', '>= 1.8.7'
 
 # Require all files in a folder
 gem "require_all", "~> 3.0"
